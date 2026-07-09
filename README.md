@@ -159,6 +159,6 @@ Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
 
 - GitHub: [@ArsalanKaleem](https://github.com/ArsalanKaleem)
 - LinkedIn: [linkedin.com/in/arsalankaleem](https://www.linkedin.com/in/arsalankaleem)
-- Portfolio: *[add your portfolio URL here]*
+- Portfolio: https://arsalankaleem.github.io/portfolio/
 
 If this project helped you make your first open source contribution, consider giving it a ⭐ — it helps others find it too.
