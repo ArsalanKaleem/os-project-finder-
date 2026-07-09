@@ -1,91 +1,86 @@
-# Open Source Project Finder
+<div align="center">
 
-**Discover trending repositories, find beginner-friendly issues, and get AI-powered guidance for your first open source contribution — on Web, Android, Windows, macOS, and Linux from a single Flutter codebase.**
+# 🧭 Open Source Project Finder
 
-Built entirely on **free APIs** (GitHub REST + GraphQL, Gemini free tier). No paid services, no accounts, no tracking. Everything you save stays on your device.
+**Discover trending repositories, find beginner-friendly issues, and get AI-powered guidance for your first open source contribution.**
+
+Built with Flutter for Web, Android, Windows, macOS, and Linux — from a single codebase.
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.27%2B-02569B?logo=flutter&logoColor=white)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-3.3%2B-0175C2?logo=dart&logoColor=white)](https://dart.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/platform-web%20%7C%20android%20%7C%20windows%20%7C%20macos%20%7C%20linux-informational)]()
+
+[Report a Bug](https://github.com/ArsalanKaleem/os-project-finder-/issues) · [Request a Feature](https://github.com/ArsalanKaleem/os-project-finder-/issues) · [Contributing](CONTRIBUTING.md)
+
+</div>
+
+---
+
+## About
+
+Most developers who want to contribute to open source hit the same wall: **they don't know where to start.** Trending pages are noisy, issue trackers are overwhelming, and it's not always clear which issues are actually approachable for a newcomer.
+
+**Open Source Project Finder** solves that. It surfaces trending and beginner-friendly repositories, filters GitHub issues down to the ones labeled for newcomers, and uses AI to explain what an issue actually involves — its difficulty, the skills it requires, and a suggested approach — without ever handing you the full solution. It's built entirely on **free APIs**, requires no backend of its own, and runs identically across five platforms from one Flutter codebase.
 
 ---
 
 ## ✨ Features
 
 ### Discover
-- 🔥 **Trending repositories** — by day / week / month, filterable by language
-- 🔎 **Powerful search** — keywords + language, topic, minimum stars, and sort order
-- ⚡ **Active this week** — recently updated popular projects
-- ♾️ **Infinite scrolling**, pull-to-refresh, skeleton loading, and friendly error/empty states
+- 🔥 Trending repositories by day, week, or month — filterable by language
+- 🔎 Full repository search with language, topic, minimum-star, and sort filters
+- ⚡ "Active this week" feed of recently updated, popular projects
+- ♾️ Infinite scrolling, pull-to-refresh, skeleton loading states, and clear error/empty states
 
 ### Contribute
-- 🎯 **Issue finder** — `good first issue`, `help wanted`, `documentation` and more, filtered by language and keyword (unassigned issues only)
-- 📈 **Contribution tracker** — mark issues as *Saved → In progress → Completed*, all locally
-- 🔖 **Bookmarks** — repositories and issues, stored offline (bookmarked repos and their READMEs are readable with no connection)
-- 🕘 **Recently viewed** repos and **search history**
+- 🎯 Issue finder scoped to `good first issue`, `help wanted`, `documentation`, and more — filterable by language and keyword, unassigned issues only
+- 📈 Local contribution tracker: mark issues as *Saved → In Progress → Completed*
+- 🔖 Offline bookmarks for repositories and issues (bookmarked READMEs are cached for offline reading)
+- 🕘 Recently viewed repositories and search history
 
 ### Understand
-- 📄 **Repository details** — README with Markdown rendering + **syntax-highlighted code blocks**, beginner-friendly issues, topics, license, language breakdown bar, top contributors
-- 👤 **GitHub profile viewer**
-- 🧠 **Contribution insights** via the GitHub **GraphQL API** (when you add an optional token): good-first-issue counts, help-wanted counts, total commits
+- 📄 Repository detail pages with rendered Markdown READMEs and syntax-highlighted code blocks
+- 👤 GitHub profile viewer for any user or organization
+- 🧠 Optional contribution insights via the GitHub GraphQL API (good-first-issue counts, help-wanted counts, commit totals) when a personal access token is added
 
-### AI assistant (Gemini free tier — bring your own free key)
-- 🗣️ **Explain an issue** in simple terms
-- 🎚️ **Difficulty estimate** (Beginner / Intermediate / Advanced) + **prerequisite skills**
-- 📚 **Learning resources** recommendations
-- 🧭 **Implementation hints** — approach and pitfalls, deliberately *never* the full solution
-- 🗺️ **Step-by-step learning roadmap** tailored to a repository
-- 📝 **README summarizer** for long READMEs
-- 💬 **Follow-up questions** in a chat interface
+### AI Assistant (Gemini free tier)
+- 🗣️ Plain-language explanations of any issue
+- 🎚️ Difficulty estimation (Beginner / Intermediate / Advanced) with reasoning
+- 📚 Recommended learning resources and prerequisite skills
+- 🧭 Implementation guidance — approach and pitfalls, deliberately never a full solution
+- 🗺️ Step-by-step learning roadmaps tailored to a specific repository
+- 📝 README summarization for long or dense projects
+- 💬 Follow-up Q&A in a persistent chat interface
 
-### Polish
-- 🌙 Dark mode by default (brand palette `#101820` / `#F2AA4C`), optional light mode
-- 🖱️ Hover effects and smooth animations on desktop/web
-- 📱 Fully responsive: bottom navigation on mobile, navigation rail on tablet/desktop
-- 📤 Share repository links, open anything on GitHub
-
----
-
-## 🚀 Getting started
-
-### Prerequisites
-- [Flutter](https://docs.flutter.dev/get-started/install) **3.27 or newer** (Dart ≥ 3.3)
-
-### Setup
-
-```bash
-git clone https://github.com/https://github.com/ArsalanKaleem/os-project-finder-
-cd os-project-finder
-
-# 1. Generate the platform folders for the targets you want
-flutter create . --platforms=web,android,windows,macos,linux
-
-# 2. Install dependencies
-flutter pub get
-
-# 3. Generate Freezed / JSON models (required before first run)
-dart run build_runner build --delete-conflicting-outputs
-
-# 4. Run it
-flutter run -d chrome     # web
-flutter run -d windows    # or macos / linux
-flutter run               # connected Android device/emulator
-```
-
-> Generated `*.freezed.dart` / `*.g.dart` files are intentionally gitignored — step 3 recreates them.
-
-### API keys (both optional, both free)
-
-| Key | Why | Where |
-|---|---|---|
-| **Gemini API key** | Enables all AI features | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) → paste in **Settings** |
-| **GitHub personal access token** | Raises the API rate limit from ~60/h to 5000/h and unlocks GraphQL contribution insights. No scopes needed. | GitHub → Settings → Developer settings → paste in **Settings** |
-
-Keys are stored only on your device (local Hive storage) and sent only to Google / GitHub respectively.
-
-> **Note on rate limits:** without a token, GitHub allows ~60 REST requests and 10 searches per minute per IP. The app surfaces a clear message when you hit the limit.
+### Design
+- 🌙 Dark theme by default, with an optional light theme
+- 🎨 Custom Material 3 palette (`#101820` / `#F2AA4C`)
+- 🖱️ Hover effects and smooth transitions on desktop and web
+- 📱 Fully responsive — bottom navigation on mobile, navigation rail on tablet and desktop
 
 ---
 
-## 🏗️ Architecture
+## 🖼️ Screenshots
 
-Clean, feature-first architecture — see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for the full tour.
+*(Add screenshots or a short demo GIF here once available — the Home, Issue Finder, Repo Details, and AI Assistant screens make for a strong preview.)*
+
+---
+
+## 🏗️ Tech Stack
+
+| Layer | Choice |
+|---|---|
+| Framework | Flutter (Web, Android, Windows, macOS, Linux) |
+| State management | Riverpod |
+| Navigation | GoRouter (`StatefulShellRoute`) |
+| Networking | Dio |
+| Models | Freezed + json_serializable |
+| Local storage | Hive (cross-platform, including Web) |
+| Markdown & code rendering | flutter_markdown + flutter_highlight |
+| Data sources | GitHub REST API, GitHub GraphQL API, Gemini API (free tier) |
+
+Architecture follows a **clean, feature-first structure** with a repository pattern separating data sources from UI — see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) for a full breakdown.
 
 ```
 lib/
@@ -102,14 +97,71 @@ lib/
     └── about/
 ```
 
-**Stack:** Flutter · Riverpod · GoRouter · Dio · Freezed + json_serializable · Hive · flutter_markdown + flutter_highlight
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- [Flutter SDK](https://docs.flutter.dev/get-started/install) 3.27 or newer (Dart ≥ 3.3)
+
+### Installation
+
+```bash
+git clone https://github.com/ArsalanKaleem/os-project-finder-.git
+cd os-project-finder-
+
+# Generate platform folders for your targets
+flutter create . --platforms=web,android,windows,macos,linux
+
+# Install dependencies
+flutter pub get
+
+# Generate Freezed / JSON models — required before first run
+dart run build_runner build --delete-conflicting-outputs
+
+# Run
+flutter run -d chrome     # Web
+flutter run -d windows    # or macos / linux
+flutter run                # connected Android device or emulator
+```
+
+> Generated `*.freezed.dart` / `*.g.dart` files are gitignored by design — the build_runner step above recreates them locally.
+
+### API Keys (both free, both optional)
+
+| Key | Purpose | Where to get it |
+|---|---|---|
+| **Gemini API key** | Enables all AI features | [aistudio.google.com/apikey](https://aistudio.google.com/apikey) → add in **Settings** |
+| **GitHub personal access token** | Raises the rate limit from ~60/hr to 5,000/hr and unlocks GraphQL contribution insights (no scopes required) | GitHub → Settings → Developer settings → add in **Settings** |
+
+All keys are stored locally on your device and sent only to their respective APIs — this app has no backend of its own.
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are very welcome — this app exists to help people contribute to open source, so it should be an easy first target itself! See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Contributions are genuinely welcome — an app built to help people make their first open source contribution should be an approachable one to contribute to. See [`CONTRIBUTING.md`](CONTRIBUTING.md) for setup details, coding conventions, and good first issues.
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m "Add your feature"`)
+4. Push to your branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+---
 
 ## 📄 License
 
-[MIT](LICENSE)
+Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
+
+---
+
+## 👤 Author
+
+**Arsalan Kaleem**
+
+- GitHub: [@ArsalanKaleem](https://github.com/ArsalanKaleem)
+- LinkedIn: [linkedin.com/in/arsalankaleem](https://www.linkedin.com/in/arsalankaleem)
+- Portfolio: *[add your portfolio URL here]*
+
+If this project helped you make your first open source contribution, consider giving it a ⭐ — it helps others find it too.
