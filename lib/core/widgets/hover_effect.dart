@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 
-/// Wraps interactive cards with a subtle lift + border glow on hover.
+import 'package:os_project_finder/core/theme/app_theme.dart';
+
+/// Wraps interactive cards with a refined lift, accent border, and glow on
+/// hover.
 ///
 /// Purely additive on desktop/web (mouse); on touch devices the hover state
-/// simply never triggers, so the widget is safe everywhere.
+/// never triggers, so the widget is safe everywhere. Also animates a pressed
+/// state on tap for tactile feedback across platforms.
 class HoverEffect extends StatefulWidget {
   const HoverEffect({
     super.key,
     required this.child,
     this.onTap,
-    this.borderRadius = 16,
-    this.scale = 1.015,
+    this.borderRadius = AppRadii.card,
+    this.scale = 1.012,
   });
 
   final Widget child;
@@ -24,39 +28,66 @@ class HoverEffect extends StatefulWidget {
 
 class _HoverEffectState extends State<HoverEffect> {
   bool _hovered = false;
+  bool _pressed = false;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
+    final isDark = Theme.of(context).brightness == Brightness.dark;
     final radius = BorderRadius.circular(widget.borderRadius);
+
+    final scale = _pressed ? 0.992 : (_hovered ? widget.scale : 1.0);
 
     return MouseRegion(
       onEnter: (_) => setState(() => _hovered = true),
       onExit: (_) => setState(() => _hovered = false),
       cursor:
-          widget.onTap != null ? SystemMouseCursors.click : MouseCursor.defer,
+      widget.onTap != null ? SystemMouseCursors.click : MouseCursor.defer,
       child: AnimatedScale(
-        scale: _hovered ? widget.scale : 1,
-        duration: const Duration(milliseconds: 160),
-        curve: Curves.easeOut,
+        scale: scale,
+        duration: const Duration(milliseconds: 180),
+        curve: Curves.easeOutCubic,
         child: AnimatedContainer(
-          duration: const Duration(milliseconds: 160),
+          duration: const Duration(milliseconds: 180),
+          curve: Curves.easeOut,
           decoration: BoxDecoration(
             borderRadius: radius,
+            gradient: _hovered
+                ? LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: [
+                scheme.surface,
+                Color.alphaBlend(
+                  scheme.secondary.withValues(alpha: isDark ? 0.05 : 0.03),
+                  scheme.surface,
+                ),
+              ],
+            )
+                : null,
+            color: _hovered ? null : scheme.surface,
             border: Border.all(
               color: _hovered
-                  ? scheme.secondary.withValues(alpha: 0.55)
+                  ? scheme.secondary.withValues(alpha: 0.6)
                   : scheme.outlineVariant,
+              width: _hovered ? 1.4 : 1,
             ),
-            color: scheme.surface,
             boxShadow: _hovered
                 ? [
-                    BoxShadow(
-                      color: Colors.black.withValues(alpha: 0.25),
-                      blurRadius: 18,
-                      offset: const Offset(0, 8),
-                    ),
-                  ]
+              BoxShadow(
+                color: Colors.black.withValues(alpha: isDark ? 0.4 : 0.12),
+                blurRadius: 24,
+                spreadRadius: -4,
+                offset: const Offset(0, 12),
+              ),
+              BoxShadow(
+                color: scheme.secondary
+                    .withValues(alpha: isDark ? 0.14 : 0.10),
+                blurRadius: 20,
+                spreadRadius: -6,
+                offset: const Offset(0, 4),
+              ),
+            ]
                 : const [],
           ),
           child: Material(
@@ -65,7 +96,10 @@ class _HoverEffectState extends State<HoverEffect> {
             clipBehavior: Clip.antiAlias,
             child: InkWell(
               onTap: widget.onTap,
+              onHighlightChanged: (v) => setState(() => _pressed = v),
               borderRadius: radius,
+              splashColor: scheme.secondary.withValues(alpha: 0.08),
+              highlightColor: scheme.secondary.withValues(alpha: 0.04),
               child: widget.child,
             ),
           ),
