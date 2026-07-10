@@ -61,25 +61,25 @@ class _IssuesScreenState extends ConsumerState<IssuesScreen> {
                 controller: _keywordController,
                 textInputAction: TextInputAction.search,
                 onSubmitted: (v) =>
-                    notifier.state = filter.copyWith(keyword: v.trim()),
+                notifier.state = filter.copyWith(keyword: v.trim()),
                 decoration: InputDecoration(
                   hintText: 'Optional keyword, e.g. "dark mode" or "parser"',
                   prefixIcon: const Icon(Icons.search),
                   suffixIcon: filter.keyword.isNotEmpty
                       ? IconButton(
-                          tooltip: 'Clear keyword',
-                          icon: const Icon(Icons.close),
-                          onPressed: () {
-                            _keywordController.clear();
-                            notifier.state = filter.copyWith(keyword: '');
-                          },
-                        )
+                    tooltip: 'Clear keyword',
+                    icon: const Icon(Icons.close),
+                    onPressed: () {
+                      _keywordController.clear();
+                      notifier.state = filter.copyWith(keyword: '');
+                    },
+                  )
                       : null,
                 ),
               ),
               const SizedBox(height: 10),
               SizedBox(
-                height: 40,
+                height: 48,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
@@ -87,7 +87,7 @@ class _IssuesScreenState extends ConsumerState<IssuesScreen> {
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: FilterChip(
-                          label: Text(label),
+                          label: Text(label, softWrap: false, maxLines: 1),
                           selected: filter.labels.contains(label),
                           onSelected: (sel) {
                             final labels = [...filter.labels];
@@ -104,14 +104,14 @@ class _IssuesScreenState extends ConsumerState<IssuesScreen> {
               ),
               const SizedBox(height: 8),
               SizedBox(
-                height: 40,
+                height: 48,
                 child: ListView(
                   scrollDirection: Axis.horizontal,
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(right: 8),
                       child: FilterChip(
-                        label: const Text('All languages'),
+                        label: const Text('All languages', softWrap: false, maxLines: 1),
                         selected: filter.language == null,
                         onSelected: (_) => notifier.state =
                             filter.copyWith(clearLanguage: true),
@@ -121,7 +121,7 @@ class _IssuesScreenState extends ConsumerState<IssuesScreen> {
                       Padding(
                         padding: const EdgeInsets.only(right: 8),
                         child: FilterChip(
-                          label: Text(lang),
+                          label: Text(lang, softWrap: false, maxLines: 1),
                           selected: filter.language == lang,
                           onSelected: (sel) => notifier.state =
                               filter.copyWith(
@@ -150,7 +150,7 @@ class _IssuesScreenState extends ConsumerState<IssuesScreen> {
                         icon: Icons.celebration_outlined,
                         title: 'No open issues matched',
                         subtitle:
-                            'Try removing a label or switching language.',
+                        'Try removing a label or switching language.',
                       );
                     }
                     return RefreshIndicator(
@@ -163,32 +163,32 @@ class _IssuesScreenState extends ConsumerState<IssuesScreen> {
                         physics: const AlwaysScrollableScrollPhysics(),
                         itemCount: state.items.length + 2,
                         separatorBuilder: (_, __) =>
-                            const SizedBox(height: 12),
+                        const SizedBox(height: 12),
                         itemBuilder: (context, i) {
                           if (i == 0) {
                             return Padding(
                               padding:
-                                  const EdgeInsets.symmetric(vertical: 4),
+                              const EdgeInsets.symmetric(vertical: 4),
                               child: Text(
                                 '${compactNumber(state.totalCount)} open, '
-                                'unassigned issues',
+                                    'unassigned issues',
                                 style: Theme.of(context)
                                     .textTheme
                                     .labelLarge
                                     ?.copyWith(
-                                        color: Theme.of(context)
-                                            .colorScheme
-                                            .onSurfaceVariant),
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurfaceVariant),
                               ),
                             );
                           }
                           if (i == state.items.length + 1) {
                             return state.isLoadingMore
                                 ? const Padding(
-                                    padding: EdgeInsets.all(24),
-                                    child: Center(
-                                        child: CircularProgressIndicator()),
-                                  )
+                              padding: EdgeInsets.all(24),
+                              child: Center(
+                                  child: CircularProgressIndicator()),
+                            )
                                 : const SizedBox(height: 32);
                           }
                           return IssueCard(issue: state.items[i - 1]);
