@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/app.dart';
-import 'package:os_project_finder/core/storage/local_storage.dart';
+import 'app.dart';
+import '/core/storage/local_storage.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -11,5 +11,5 @@ Future<void> main() async {
   // all local persistence: bookmarks, history, settings and offline cache.
   await LocalStorage.init();
 
-  runApp(const ProviderScope(child: OSProjectFinderApp()));
+  runApp(const ProviderScope(child: ForgeOSApp()));
 }

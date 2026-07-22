@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/router/app_router.dart';
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/core/widgets/hover_effect.dart';
-import 'package:os_project_finder/core/widgets/language_dot.dart';
-import 'package:os_project_finder/features/bookmarks/bookmarks_providers.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/core/router/app_router.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/core/widgets/hover_effect.dart';
+import 'package:forgeos/core/widgets/language_dot.dart';
+import 'package:forgeos/features/bookmarks/bookmarks_providers.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 /// Repository card used in every grid/list across the app.
 class RepoCard extends ConsumerWidget {

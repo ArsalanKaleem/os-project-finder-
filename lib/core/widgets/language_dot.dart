@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:os_project_finder/core/utils/formatters.dart';
+import 'package:forgeos/core/utils/formatters.dart';
 
 /// GitHub-style colored dot + language name, with a soft glow ring.
 class LanguageDot extends StatelessWidget {

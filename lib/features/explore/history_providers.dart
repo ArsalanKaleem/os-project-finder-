@@ -1,8 +1,8 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/storage/local_storage.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/storage/local_storage.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 /// Recent search queries (newest first, de-duplicated, capped).
 final searchHistoryProvider =

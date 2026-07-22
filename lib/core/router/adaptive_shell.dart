@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/utils/responsive.dart';
+import 'package:forgeos/core/utils/responsive.dart';
 
 class _Destination {
   const _Destination(this.label, this.icon, this.selectedIcon);

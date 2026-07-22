@@ -5,7 +5,7 @@ import 'package:flutter_highlight/themes/atom-one-light.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:markdown/markdown.dart' as md;
 
-import 'package:os_project_finder/core/utils/launcher.dart';
+import 'package:forgeos/core/utils/launcher.dart';
 
 /// README renderer: GitHub-flavoured markdown with syntax-highlighted code
 /// blocks and correctly resolved images (relative paths, `blob` links, and

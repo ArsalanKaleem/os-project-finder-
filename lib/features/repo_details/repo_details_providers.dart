@@ -1,10 +1,10 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/storage/local_storage.dart';
-import 'package:os_project_finder/features/bookmarks/bookmarks_providers.dart';
-import 'package:os_project_finder/features/github/data/github_api.dart';
-import 'package:os_project_finder/features/github/data/github_graphql.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/core/storage/local_storage.dart';
+import 'package:forgeos/features/bookmarks/bookmarks_providers.dart';
+import 'package:forgeos/features/github/data/github_api.dart';
+import 'package:forgeos/features/github/data/github_graphql.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 typedef RepoRef = ({String owner, String name});
 

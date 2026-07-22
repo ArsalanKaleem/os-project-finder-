@@ -2,20 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/core/utils/launcher.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/core/widgets/language_dot.dart';
-import 'package:os_project_finder/core/widgets/skeletons.dart';
-import 'package:os_project_finder/core/widgets/status_views.dart';
-import 'package:os_project_finder/features/ai/presentation/ai_assistant_sheet.dart';
-import 'package:os_project_finder/features/bookmarks/bookmarks_providers.dart';
-import 'package:os_project_finder/features/explore/history_providers.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
-import 'package:os_project_finder/features/github/widgets/issue_card.dart';
-import 'package:os_project_finder/features/issues/issues_providers.dart';
-import 'package:os_project_finder/features/repo_details/markdown_view.dart';
-import 'package:os_project_finder/features/repo_details/repo_details_providers.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/core/utils/launcher.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/core/widgets/language_dot.dart';
+import 'package:forgeos/core/widgets/skeletons.dart';
+import 'package:forgeos/core/widgets/status_views.dart';
+import 'package:forgeos/features/ai/presentation/ai_assistant_sheet.dart';
+import 'package:forgeos/features/bookmarks/bookmarks_providers.dart';
+import 'package:forgeos/features/explore/history_providers.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/github/widgets/issue_card.dart';
+import 'package:forgeos/features/issues/issues_providers.dart';
+import 'package:forgeos/features/repo_details/markdown_view.dart';
+import 'package:forgeos/features/repo_details/repo_details_providers.dart';
 
 /// Full repository page: header + README / Issues / About tabs.
 class RepoDetailsScreen extends ConsumerStatefulWidget {

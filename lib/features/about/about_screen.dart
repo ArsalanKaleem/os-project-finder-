@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/utils/launcher.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/utils/launcher.dart';
+import 'package:forgeos/core/utils/responsive.dart';
 
 /// About page: what the app is, the stack, and how to contribute.
 class AboutScreen extends StatelessWidget {
@@ -47,9 +48,9 @@ class AboutScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              'Open Source Project Finder helps developers — especially '
-              'first-time contributors — discover trending repositories, '
-              'find beginner-friendly issues, and get AI guidance for making '
+              'ForgeOS helps developers — especially first-time '
+              'contributors — discover trending repositories, find '
+              'beginner-friendly issues, and get AI guidance for making '
               'their first contribution.\n\n'
               'It is itself open source, free to use, and built entirely on '
               'free APIs: the GitHub REST & GraphQL APIs and the Gemini free '
@@ -92,6 +93,16 @@ class AboutScreen extends StatelessWidget {
                 title: const Text('License'),
                 subtitle: const Text(
                     'MIT — free to use, modify, and distribute.'),
+              ),
+            ),
+            const SizedBox(height: 12),
+            Card(
+              child: ListTile(
+                leading: const Icon(Icons.person_outline),
+                title: const Text('Meet the developer'),
+                subtitle: const Text('Who built ForgeOS, and how to reach them.'),
+                trailing: const Icon(Icons.chevron_right),
+                onTap: () => context.push('/about-developer'),
               ),
             ),
           ],

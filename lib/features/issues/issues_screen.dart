@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/core/widgets/skeletons.dart';
-import 'package:os_project_finder/core/widgets/status_views.dart';
-import 'package:os_project_finder/features/github/widgets/issue_card.dart';
-import 'package:os_project_finder/features/issues/issues_providers.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/core/widgets/skeletons.dart';
+import 'package:forgeos/core/widgets/status_views.dart';
+import 'package:forgeos/features/github/widgets/issue_card.dart';
+import 'package:forgeos/features/issues/issues_providers.dart';
 
 /// Beginner-friendly issue finder: filter by label, language and keyword,
 /// with infinite scrolling.

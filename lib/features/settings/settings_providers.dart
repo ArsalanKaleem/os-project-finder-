@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/storage/local_storage.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/storage/local_storage.dart';
 
 /// Everything the user can configure, persisted to Hive.
 @immutable

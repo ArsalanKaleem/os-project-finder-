@@ -1,4 +1,4 @@
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
 
 /// Progress on an issue the user decided to work on.
 enum ContributionStatus { saved, inProgress, completed }

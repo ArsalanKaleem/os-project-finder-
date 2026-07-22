@@ -1,14 +1,14 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/network/api_exception.dart';
-import 'package:os_project_finder/core/network/dio_client.dart';
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/features/github/domain/models/github_user.dart';
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
-import 'package:os_project_finder/features/github/domain/models/paged_result.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/network/api_exception.dart';
+import 'package:forgeos/core/network/dio_client.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/features/github/domain/models/github_user.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
+import 'package:forgeos/features/github/domain/models/paged_result.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 final githubApiProvider =
     Provider<GithubApi>((ref) => GithubApi(ref.watch(githubDioProvider)));

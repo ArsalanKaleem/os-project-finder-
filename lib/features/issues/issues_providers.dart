@@ -1,9 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/features/explore/explore_providers.dart';
-import 'package:os_project_finder/features/github/data/github_api.dart';
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
+import 'package:forgeos/features/explore/explore_providers.dart';
+import 'package:forgeos/features/github/data/github_api.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
 
 /// Filters for the beginner-friendly issue finder.
 @immutable

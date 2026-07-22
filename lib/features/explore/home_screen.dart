@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/core/widgets/skeletons.dart';
-import 'package:os_project_finder/core/widgets/status_views.dart';
-import 'package:os_project_finder/features/explore/explore_providers.dart';
-import 'package:os_project_finder/features/explore/history_providers.dart';
-import 'package:os_project_finder/features/github/data/github_api.dart';
-import 'package:os_project_finder/features/github/widgets/repo_card.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/core/widgets/skeletons.dart';
+import 'package:forgeos/core/widgets/status_views.dart';
+import 'package:forgeos/features/explore/explore_providers.dart';
+import 'package:forgeos/features/explore/history_providers.dart';
+import 'package:forgeos/features/github/data/github_api.dart';
+import 'package:forgeos/features/github/widgets/repo_card.dart';
 
 /// Home: trending repositories + recently active + recently viewed.
 class HomeScreen extends ConsumerWidget {

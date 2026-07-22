@@ -1,8 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/features/github/data/github_api.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/github/data/github_api.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 /// Filters for the Home (trending) page.
 @immutable

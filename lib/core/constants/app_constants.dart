@@ -1,8 +1,9 @@
 /// App-wide constants. Keep magic values out of widgets and services.
 abstract final class AppConstants {
-  static const appName = 'Open Source Project Finder';
+  static const appName = 'ForgeOS';
+  static const appTagline = 'Open Source Project Finder';
   static const appVersion = '1.0.0';
-  static const repoUrl = 'https://github.com/your-username/os-project-finder';
+  static const repoUrl = 'https://github.com/your-username/forgeos';
 
   // ── GitHub ────────────────────────────────────────────────────────────
   static const githubApiBase = 'https://api.github.com';

@@ -28,7 +28,7 @@ abstract final class LocalStorage {
   static const readmeCacheBox = 'readme_cache';
 
   static Future<void> init() async {
-    await Hive.initFlutter('os_project_finder');
+    await Hive.initFlutter('forgeos');
     for (final name in _boxNames) {
       await Hive.openBox<String>(name);
     }

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/core/utils/launcher.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/core/widgets/skeletons.dart';
-import 'package:os_project_finder/core/widgets/status_views.dart';
-import 'package:os_project_finder/features/github/data/github_api.dart';
-import 'package:os_project_finder/features/github/domain/models/github_user.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
-import 'package:os_project_finder/features/github/widgets/repo_card.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/core/utils/launcher.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/core/widgets/skeletons.dart';
+import 'package:forgeos/core/widgets/status_views.dart';
+import 'package:forgeos/features/github/data/github_api.dart';
+import 'package:forgeos/features/github/domain/models/github_user.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/github/widgets/repo_card.dart';
 
 final _userProvider = FutureProvider.autoDispose.family<GithubUser, String>(
     (ref, login) => ref.read(githubApiProvider).getUser(login));

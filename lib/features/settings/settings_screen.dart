@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/core/storage/local_storage.dart';
-import 'package:os_project_finder/core/utils/launcher.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/features/explore/history_providers.dart';
-import 'package:os_project_finder/features/settings/settings_providers.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/core/storage/local_storage.dart';
+import 'package:forgeos/core/utils/launcher.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/features/explore/history_providers.dart';
+import 'package:forgeos/features/settings/settings_providers.dart';
 
 /// Settings: theme, Gemini API key/model, GitHub token, data management.
 class SettingsScreen extends ConsumerStatefulWidget {

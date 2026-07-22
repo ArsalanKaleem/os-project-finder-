@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/core/widgets/status_views.dart';
-import 'package:os_project_finder/features/bookmarks/bookmarks_providers.dart';
-import 'package:os_project_finder/features/github/domain/models/contribution.dart';
-import 'package:os_project_finder/features/github/widgets/issue_card.dart';
-import 'package:os_project_finder/features/github/widgets/repo_card.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/core/widgets/status_views.dart';
+import 'package:forgeos/features/bookmarks/bookmarks_providers.dart';
+import 'package:forgeos/features/github/domain/models/contribution.dart';
+import 'package:forgeos/features/github/widgets/issue_card.dart';
+import 'package:forgeos/features/github/widgets/repo_card.dart';
 
 /// Saved tab: bookmarked repos, bookmarked issues, and tracked contributions.
 /// Everything here is stored locally and available offline.

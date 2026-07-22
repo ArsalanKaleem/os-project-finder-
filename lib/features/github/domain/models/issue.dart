@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 part 'issue.freezed.dart';
 part 'issue.g.dart';

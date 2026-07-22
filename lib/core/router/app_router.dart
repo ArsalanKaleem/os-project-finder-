@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/router/adaptive_shell.dart';
-import 'package:os_project_finder/features/about/about_screen.dart';
-import 'package:os_project_finder/features/bookmarks/saved_screen.dart';
-import 'package:os_project_finder/features/explore/home_screen.dart';
-import 'package:os_project_finder/features/explore/search_screen.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
-import 'package:os_project_finder/features/issues/issues_screen.dart';
-import 'package:os_project_finder/features/profile/profile_screen.dart';
-import 'package:os_project_finder/features/repo_details/repo_details_screen.dart';
-import 'package:os_project_finder/features/settings/settings_screen.dart';
+import 'package:forgeos/core/router/adaptive_shell.dart';
+import 'package:forgeos/features/about/about_developer_screen.dart';
+import 'package:forgeos/features/about/about_screen.dart';
+import 'package:forgeos/features/bookmarks/saved_screen.dart';
+import 'package:forgeos/features/explore/home_screen.dart';
+import 'package:forgeos/features/explore/search_screen.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/issues/issues_screen.dart';
+import 'package:forgeos/features/profile/profile_screen.dart';
+import 'package:forgeos/features/repo_details/repo_details_screen.dart';
+import 'package:forgeos/features/settings/settings_screen.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -69,6 +70,11 @@ final appRouterProvider = Provider<GoRouter>((ref) {
         path: '/about',
         parentNavigatorKey: _rootNavigatorKey,
         builder: (_, __) => const AboutScreen(),
+      ),
+      GoRoute(
+        path: '/about-developer',
+        parentNavigatorKey: _rootNavigatorKey,
+        builder: (_, __) => const AboutDeveloperScreen(),
       ),
     ],
   );

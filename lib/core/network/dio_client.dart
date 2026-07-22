@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/constants/app_constants.dart';
-import 'package:os_project_finder/features/settings/settings_providers.dart';
+import 'package:forgeos/core/constants/app_constants.dart';
+import 'package:forgeos/features/settings/settings_providers.dart';
 
 /// Dio instance for the GitHub REST API.
 ///

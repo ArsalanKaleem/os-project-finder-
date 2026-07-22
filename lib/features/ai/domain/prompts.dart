@@ -1,5 +1,5 @@
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 /// Prompt templates for every AI action in the app.
 ///

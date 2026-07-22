@@ -1,9 +1,9 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/storage/local_storage.dart';
-import 'package:os_project_finder/features/github/domain/models/contribution.dart';
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
+import 'package:forgeos/core/storage/local_storage.dart';
+import 'package:forgeos/features/github/domain/models/contribution.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
 
 /// Bookmarked repositories.
 ///

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:os_project_finder/core/router/app_router.dart';
-import 'package:os_project_finder/core/utils/formatters.dart';
-import 'package:os_project_finder/core/utils/launcher.dart';
-import 'package:os_project_finder/core/widgets/hover_effect.dart';
-import 'package:os_project_finder/core/widgets/language_dot.dart';
-import 'package:os_project_finder/features/ai/presentation/ai_assistant_sheet.dart';
-import 'package:os_project_finder/features/bookmarks/bookmarks_providers.dart';
-import 'package:os_project_finder/features/github/domain/models/contribution.dart';
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
+import 'package:forgeos/core/router/app_router.dart';
+import 'package:forgeos/core/utils/formatters.dart';
+import 'package:forgeos/core/utils/launcher.dart';
+import 'package:forgeos/core/widgets/hover_effect.dart';
+import 'package:forgeos/core/widgets/language_dot.dart';
+import 'package:forgeos/features/ai/presentation/ai_assistant_sheet.dart';
+import 'package:forgeos/features/bookmarks/bookmarks_providers.dart';
+import 'package:forgeos/features/github/domain/models/contribution.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
 
 /// Issue card with label chips, bookmark, AI-explain, and status tracking.
 class IssueCard extends ConsumerWidget {

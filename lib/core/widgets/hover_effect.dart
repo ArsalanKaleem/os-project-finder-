@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:os_project_finder/core/theme/app_theme.dart';
+import 'package:forgeos/core/theme/app_theme.dart';
 
 /// Wraps interactive cards with a refined lift, accent border, and glow on
 /// hover.

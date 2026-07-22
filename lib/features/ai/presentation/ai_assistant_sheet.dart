@@ -3,13 +3,13 @@ import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:os_project_finder/core/utils/launcher.dart';
-import 'package:os_project_finder/core/utils/responsive.dart';
-import 'package:os_project_finder/features/ai/data/gemini_api.dart';
-import 'package:os_project_finder/features/ai/domain/prompts.dart';
-import 'package:os_project_finder/features/github/domain/models/issue.dart';
-import 'package:os_project_finder/features/github/domain/models/repo.dart';
-import 'package:os_project_finder/features/settings/settings_providers.dart';
+import 'package:forgeos/core/utils/launcher.dart';
+import 'package:forgeos/core/utils/responsive.dart';
+import 'package:forgeos/features/ai/data/gemini_api.dart';
+import 'package:forgeos/features/ai/domain/prompts.dart';
+import 'package:forgeos/features/github/domain/models/issue.dart';
+import 'package:forgeos/features/github/domain/models/repo.dart';
+import 'package:forgeos/features/settings/settings_providers.dart';
 
 /// What the assistant was opened for; determines quick actions and the
 /// initial prompt.
