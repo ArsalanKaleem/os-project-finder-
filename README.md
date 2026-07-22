@@ -101,19 +101,15 @@ If you've ever bookmarked a "how to start with open source" blog post and never 
 
 ```mermaid
 flowchart LR
-    A[Browse trending repos<br/>or search by language/topic] --> B[Open a repository]
-    B --> C[Filter its issues to<br/>good first issue / help wanted]
-    C --> D[Ask the AI Assistant<br/>to explain the issue]
-    D --> E{Feels approachable?}
-    E -- Yes --> F[Bookmark it,<br/>mark In Progress]
-    E -- Not yet --> C
-    F --> G[Open your first PR 🎉]
-    G --> H[Mark Completed<br/>in your tracker]
+    A["Browse trending repositories"] --> B["Open a repository"]
+    B --> C["Find beginner-friendly issues"]
+    C --> D["Ask the AI Assistant"]
+    D --> E{"Ready to contribute?"}
+    E -->|Yes| F["Bookmark & start working"]
+    E -->|Not yet| C
+    F --> G["Open your first pull request"]
+    G --> H["Mark it as completed"]
 ```
-
-No sign-up screen, no onboarding wizard — open the app and you're already browsing real, live repositories.
-
----
 
 ## 📸 Screenshots
 
@@ -155,13 +151,15 @@ Architecture follows a **clean, feature-first structure** with a repository patt
 ## 🧱 Architecture
 
 ```mermaid
-graph TD
-    UI[Feature UI<br/>Widgets & Screens] --> Providers[Riverpod Providers]
-    Providers --> Repos[Repositories]
-    Repos --> GH[GitHub REST/GraphQL API]
-    Repos --> Gemini[Gemini API]
-    Repos --> Hive[(Hive Local Storage)]
-    Providers -.state.-> UI
+flowchart TD
+    UI["UI Layer"] --> Providers["Riverpod Providers"]
+    Providers --> Repositories["Repositories"]
+
+    Repositories --> GitHub["GitHub API"]
+    Repositories --> AI["Gemini API"]
+    Repositories --> Storage["Hive Storage"]
+
+    Providers -. "State Updates" .-> UI
 ```
 
 - **`core/`** holds everything cross-cutting: theme, router, the Dio client, local storage, and shared widgets/utilities used across every feature.
