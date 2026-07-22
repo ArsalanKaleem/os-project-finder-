@@ -1,6 +1,6 @@
 {
-    "name": "os_project_finder",
-    "short_name": "os_project_finder",
+    "name": "ForgeOS",
+    "short_name": "ForgeOS",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,45 +1,31 @@
-name: os_project_finder
+name: forgeos
 description: >-
-  Open Source Project Finder — discover trending repositories and
-  beginner-friendly GitHub issues, with AI-powered guidance to make
-  your first open source contribution.
-publish_to: 'none'
+  ForgeOS — discover trending repositories and beginner-friendly GitHub
+  issues, with AI-powered guidance to make your first open source contribution.
+
+publish_to: "none"
+
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.3.0 <4.0.0'
+  sdk: ">=3.3.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  # State management
   flutter_riverpod: ^2.5.1
-
-  # Navigation
   go_router: ^14.2.0
-
-  # Networking
   dio: ^5.4.3
-
-  # Models / codegen
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
-
-  # Local storage (works on all 6 platforms, including web)
   hive_flutter: ^1.1.0
-
-  # UI
   google_fonts: ^6.2.1
   flutter_markdown: ^0.7.3+1
   flutter_highlight: ^0.7.0
   markdown: ^7.2.2
-
-  # Platform services
   url_launcher: ^6.3.0
   share_plus: ^10.0.2
-
-  # Utilities
   intl: ^0.19.0
 
 dev_dependencies:
@@ -50,5 +36,24 @@ dev_dependencies:
   freezed: ^2.5.7
   json_serializable: ^6.8.0
 
+  # Launcher Icons
+  flutter_launcher_icons: ^0.14.3
+
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/Forge.png
+
+flutter_launcher_icons:
+  image_path: "assets/Forge.png"
+
+  android: true
+  web:
+    generate: true
+    image_path: "assets/Forge.png"
+
+  windows:
+    generate: true
+    image_path: "assets/Forge.png"
+    icon_size: 256
